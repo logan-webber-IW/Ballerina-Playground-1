@@ -14,5 +14,14 @@ service /graphql on new graphql:Listener(4000) {
     resource function get todos(string todoOne, string todoTwo, string todoThree) returns string{
         return string `I must ${todoOne}, I must also ${todoTwo}, Finally I must ${todoThree} `;
     }
+
+    resource function get noOfTodos(int theNoOfTodos){
+        return int;
+    }
+
+    // function theNoOfTodos(){
+    //     return noOfTodos(3)
+    // }
+
 }
 
