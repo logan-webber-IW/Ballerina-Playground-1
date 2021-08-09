@@ -1,4 +1,5 @@
 import ballerina/graphql;
+import ballerina/io;
 
 service /graphql on new graphql:Listener(4000) {
 
@@ -15,13 +16,34 @@ service /graphql on new graphql:Listener(4000) {
         return string `I must ${todoOne}, I must also ${todoTwo}, Finally I must ${todoThree} `;
     }
 
-    resource function get noOfTodos(int theNoOfTodos) returns int{
-        return theNoOfTodos;
+    resource function get noOfTodos(int theTodos) returns int{
+        return theTodos;
     }
 
-    // function theNoOfTodos(){
-    //     return noOfTodos(3)
-    // }
+    resource function get countTodos(int theTodos) returns int{
+        return theTodos;
+    }
 
 }
+
+    type Todos record {
+     string todoOne;
+     string todoTwo;
+     string todoThree;
+     int countTheTodos;
+    };
+
+     function countingTheTodos() {
+        Todos theTodo = {todoOne:"", todoTwo: "", todoThree: "", countTheTodos: 0};
+        io:println(theTodo.todoOne);
+        
+    }
+
+
+
+
+
+
+
+
 
