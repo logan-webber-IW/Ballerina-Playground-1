@@ -17,41 +17,30 @@ type Game object {
     public string publisher;
     public string category;
     public boolean isDownloaded;
-
     function getsTitle() returns string;
     function getsPublisher() returns string;
     function getsCategory() returns string;
     function getsDownloadedStatus(int condition, int a) returns boolean;
-    
 };
 
 distinct class NewWorld {
-
     *gamesInSteamLibrary;
     *radRating;
-
     function getKind() returns string {
         return "New World";
     }
-
     function getRadRating() returns boolean {
-        // Always rad!
         return true;
     }
-
 }
 
 distinct class Valorant {
-
     *gamesInSteamLibrary;
     *radRating;
-
     function getKind() returns string {
         return "Valorant";
     }
-
      function getRadRating() returns boolean {
-        // Always rad!
         return true;
     }
 }
